@@ -13,7 +13,7 @@ services:
     expose:
       - 80
     volumes:
-      - ./workspace/:/var/www/html/
+      - /var/www/html/
 
   krayin-mysql:
     image: mysql:8.4.0-oraclelinux8
