@@ -96,3 +96,7 @@ With the help of docker-compose, one can define containers to be built, their co
   ~~~
 
 In case of any issues or queries, raise your ticket at [Webkul Support](https://webkul.uvdesk.com/en/customer/create-ticket/).
+
+
+## Nota
+Al instalar en coolify los comandos de chmod y chown no se ejecutaron correctamente desde el Dockerfile, al ejecutarlos desde el contenedor manualmente se consiguio que el sistema funcione correctamente
