@@ -39,6 +39,7 @@ RUN npm install -g laravel-echo-server
 ARG container_project_path
 ARG uid
 ARG user
+ARG enduser
 
 # setting work directory
 WORKDIR $container_project_path
