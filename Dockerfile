@@ -57,4 +57,4 @@ RUN chmod -R 775 $container_project_path
 RUN chown -R $user:www-data $container_project_path
 
 # changing user
-USER $user
+USER $enduser
