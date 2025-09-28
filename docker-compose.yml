@@ -10,8 +10,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     image: krayin-php-apache
-    ports:
-      - 80:80
+    expose:
+      - 80
     volumes:
       - ./workspace/:/var/www/html/
 
@@ -21,15 +21,15 @@ services:
     environment:
       MYSQL_ROOT_HOST: "%"
       MYSQL_ROOT_PASSWORD: root
-    ports:
-      - 3306:3306
+    expose:
+      - 3306
     volumes:
       - ./.configs/mysql-data:/var/lib/mysql/
 
   krayin-redis:
     image: redis:6.2-alpine
-    ports:
-      - 6379:6379
+    expose:
+      - 6379
     command: redis-server --save 20 1 --loglevel warning
     volumes:
       - ./.configs/redis-data:/data
@@ -42,14 +42,14 @@ services:
       PMA_PASSWORD: root
       UPLOAD_LIMIT: 512M
     ports:
-      - 8080:80
+      - 80
 
   krayin-mailhog:
-      image: mailhog/mailhog
-      logging:
-          # Disable saving logs.
-          driver: 'none'
-      ports:
-          # SMTP server.
-          - 1025:1025
-          - 8025:8025
+    image: mailhog/mailhog
+    logging:
+      # Disable saving logs.
+      driver: 'none'
+    expose:
+      # SMTP server.
+      - 1025
+      - 8025
