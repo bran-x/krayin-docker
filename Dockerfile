@@ -54,7 +54,7 @@ COPY ./.configs/apache.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 # setting up project from `src` folder
-RUN chmod -R 775 $container_project_path
+RUN chmod -R 777 $container_project_path
 RUN chown -R $user:www-data $container_project_path
 
 # changing user
